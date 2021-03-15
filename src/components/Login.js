@@ -1,7 +1,16 @@
-function Login() {
+import auth from './auth';
+
+function Login(props) {
   return (
     <div className="Login">
-      <h1>Login Here</h1>
+      <button
+        onClick = {() => { 
+          auth.login(() => {
+            props.history.push("/scan");
+          })
+        }}>
+          Login
+      </button>
     </div>
   );
 }
